@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "cf098738-9b5f-41d3-be9a-fb7a8cd4a15e",
+		"name": "Awesome Quotes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "49298126",
+		"_collection_link": "https://vardhamankatariya01-9574121.postman.co/workspace/Project01~015d996e-0b0d-4098-b0a5-3d750c1a20ff/collection/49298126-cf098738-9b5f-41d3-be9a-fb7a8cd4a15e?action=share&source=collection_link&creator=49298126"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"test1\", \r\n    \"lastName\": \"Test\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"test\",\r\n    \"confirmPassword\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "update profile Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Test\",\r\n    \"lastName\": \"User\",\r\n    \"phoneno\": \"123\",\r\n    \"address\": \"test address\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test@gmail.com\",\r\n    \"passwd\":\"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/users/signin"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quotes",
+			"item": [
+				{
+					"name": "get all quotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{URL}}/foods"
+					},
+					"response": []
+				},
+				{
+					"name": "get all my quotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{URL}}/foods"
+					},
+					"response": []
+				},
+				{
+					"name": "get all favourite quotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{URL}}/foods"
+					},
+					"response": []
+				},
+				{
+					"name": "add quote",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\" : \"Swami Vivekananda\", \n    \"contents\" : \"Arise, awake, and stop not until the goal is reached.\",\n    \"userId\": \"4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/quotes"
+					},
+					"response": []
+				},
+				{
+					"name": "edit quote",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Alu Paratha",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "145.0",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Delicious Alu Paratha with Butter",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "Veg",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/Nilesh/Aug25/food-images/AluParatha.jpg"
+								}
+							]
+						},
+						"url": "{{URL}}/foods/11"
+					},
+					"response": []
+				},
+				{
+					"name": "delete quote",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{URL}}/foods/16"
+					},
+					"response": []
+				},
+				{
+					"name": "like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\" : \"Swami Vivekananda\", \n    \"contents\" : \"Arise, awake, and stop not until the goal is reached.\",\n    \"userId\": \"4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/quotes"
+					},
+					"response": []
+				},
+				{
+					"name": "delete unlike => like/:userId/:quoteId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{URL}}/foods/16"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": ""
+		}
+	]
+}
